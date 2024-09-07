@@ -1,0 +1,57 @@
+/*
+position: 
+=========
+1. static 
+  --------
+is the default value.
+2. relative 
+  -----------
+  like static but you can move it.
+  allow to change the top, left, right and bottom of the elment without changing other elments. move the elment from document flow 
+3. absolute : 
+  ---------
+  like relative, but you can it base on it parent element, that using postion relative, absolut, sticky anf fixed. 
+  completly remove the elment from document flow, 
+  using if you want to stick element in specific position and you dont want anything to move arount it.
+  you can use top, left, right and botton to it. 
+4. fixed 
+---------
+- move right to top, ignore relative postion of the ather elment.
+kept there postion also while scrolling.
+5. sticky - 
+-------------
+combine of relative and fix. 
+by default its relative, on scrolling acting like fixed.
+
+
+
+notes:
+------
+1. parent is postion static, default postion, so nothing with postion absolte or relative to it.
+that why if child-one has position absolute it not to parent.
+parent need to be: relative, absolute, sticky or fix in order to make element postion absolutly to it. 
+if there is no such element father, it absolute to body.
+2. for make the .child-one to be in parent, parent postion: relative, and child-one postion= absolute. 
+
+
+*/
+
+.parent {
+    position: relative;
+    height: 200vh;
+}
+
+.child-one {
+    position: sticky; 
+    top: 0px;
+   
+}
+
+.child-two {
+
+
+}
+.child-three {
+
+
+}

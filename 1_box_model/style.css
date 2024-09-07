@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+
+}
+
+.box-one{
+    background-color: #eb5757;
+    
+    padding: 10px; /* add background*/
+    border: 20px solid #9b51E0;
+    margin: 100px; /*use for 2 elements apart from each other*/
+    
+    height: 100px; /*Of the content*/
+    width: 100px; /*Of the content*/
+    box-sizing:border-box; /* make the height width to be include not only the content but also the padding and border*/
+    
+}
+
+.box-two {
+    background-color: #2d9cdb;
+    border: 0 solid #27ae60;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    border: 30px solid #9b51E0;
+    margin: 70px; /*margin collapses between 2 elements that there are next to each others it take the max between the both margin of the elemnts*/
+}

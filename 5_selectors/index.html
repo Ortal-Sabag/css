@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /**Basic /
+            /*all elments */
+            /* * { 
+                background: pink;
+            }  */
+            /* element selector */
+            /* span { 
+                background: yellow;
+            } */
+            /*class selector*/
+            /* .red { 
+                background: red;
+            } */
+            /*very specific for only one elemnt with this id*/
+            /*#green { 
+                background: green;
+            }
+            */
+            /*only div with class of red , add all the selector without any spaces.*/
+            /* div.red{ 
+                background:red;
+            } */
+             /*div with both classes: red and green-text*/
+            /* div.red.green-text{
+                background: red;
+                color: green;
+            } */
+             /* use ',' for diffrent selector with the same style*/
+            /* span, li {
+                background: burlywood;
+            } */
+            /* all span and li with class of broun */
+            /* span, li.brown {
+                background: burlywood;
+            } */
+            /* space it hirarcy, all the li inside ul*/
+            /* ul li { 
+                background: red;
+            }
+            div b {
+                color: aquamarine;
+            } */
+            /*direct child*/
+            /* span > b {
+                color: aqua;
+            } */
+            /* all the li that are sibling with li that have class of red, but came after this li, not after*/
+            /* li.red ~ li {
+                background: blueviolet;
+            } */
+            /* checking only the the first sibling, only next child, that came after is li.re element if it li.green, if it the second elment it will ignore it*/
+            /* li.red + li.green {
+                background: blueviolet;
+            } */
+            /*==========saddu==========================================================*/
+            /* li:hover{
+                background: red;
+            } */
+            /* when focusing the input elment*/
+            /* input:focus{
+                background: red;
+            } */
+            /* only if it have inquired attribute*/
+            /* input:required{
+                margin: 50px;
+                background: pink;
+            } */
+            /* if it have checked attribute <input checked type="checkbox" />*/
+            /* input:checked{
+                margin: 50px;
+                background: pink;
+            } */
+            /* if it have the disable attribute <input disabled type="checkbox" />*/
+            /* input:disabled{
+                margin: 50px;
+            } */
+             /*====================================================================*/
+             /* check only the first li child */
+             /* li:first-child{
+                background: red;
+             } */
+             /* while not work, that check the first child*/
+             /* li.red:first-child{} */
+             /**/
+             /* li:last-child{
+                background: red;
+             } */
+             /* select children #3*/
+             /*li:nth-child(3){
+                background: red;
+             } */
+            /* using formola, select any second elment , 3n any 3 elment,2n-1 to start with 1 */
+            /* li:nth-child(2n){
+                background: red;
+             } */
+             /*same as li:nth-child(2n) but will start from the end */
+             /* li:nth-last-child(2n-1){
+                background: red;
+             } */
+             /* if li is the only child of it elment parent*/
+             /* li:only-child{
+                background: blue;
+             } */
+             /*only span that are the only one children of elment, no more sibling*/
+             /* span:only-child{
+                background: blue;
+             }  */
+             /*the first elment of type span, get the style*/
+            /* span:first-of-type{
+                background: red;
+            } */
+            /*last li under each container, even if it have anouther elment after*/
+            /* li:last-of-type{
+                background: green;
+
+            }
+            li:nth-of-type(2){
+                background: yellow;
+            }
+            */
+            /* li:nth-last-of-type(2){ 
+                background: yellow;
+            } */
+            /* only the span that are the last child of the container*/
+            /* span:only-of-type{
+                background: purple;
+            } */
+            /* all the elments that are no this type, dont have the class of green*/
+            /* li:not(.green) {
+                background: red;
+            } */
+            /*===================================================*/
+            /* div.red::before {
+                content: 'Before';
+                background: red;
+            }
+            div.red::after {
+                content: 'After';
+                background: red;
+            } */
+            /*Using attributes*/ 
+            /*example: <div data-red> This is a div</div>*/
+            /** each element that have this data attribute/
+            /* [data-red]{
+                background: red;
+            } */
+            /* each elemnt that have this data attribute equal to true*/
+            [data-green="true"] {
+                background: green;
+            }
+            /* each elemnt that have the data-yellow attribute that start with 'yell'*/
+            [data-yellow^='yell'] {
+                color: yellow;
+            }
+            /*each elment that have the data-border attribute and end with der */
+            [data-border$='der'] {
+                border: 1px solid red;
+            }
+            /*each elment that have data-blue attribute that include lu*/
+            [data-blue*='lu'] {
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <input required type="text" />
+        <!-- <input disabled type="checkbox" /> -->
+        <div data-blue="blue">blue</div>
+        <div data-red data-green="true" data-yellow='yellow' data-border="border"> This is a div</div>
+        <div class="red green-text"> This is a div</div>
+        <div> fjeifjojo</div>
+        <span id="green"> This is a span</span>
+        <div><span><b>nested text</b></span></div>
+        <ul>
+            <li > Item 1</li>
+            <li class="red"> Item 2</li>
+            <li> Item 3</li>
+            <li class="green"> Item 4</li>
+        </ul>
+    </body>
+</html>

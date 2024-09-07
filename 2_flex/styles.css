@@ -1,0 +1,126 @@
+/*
+Summary
+========
+1. display: flex -
+-------------------
+container which wrap your diffrent item with.
+2. Justify-content and align-items - 
+-------------------------------------
+how do you want to alighn the items inside the container.
+3. flex-grow, flex-shrink, flex-basis:
+---------------------------------------
+to layout your item individualy inside the flex box container.
+to grow or shrink as you need.
+can defined all the 3 by: 
+
+flex: grow, shrink, basis
+flex: 1 0 0px on specific item
+flex: 1 -> defined only the grow.
+
+
+*/
+.flexbox-container{
+    display: flex;
+}
+
+.flexbox-container-row { 
+    display: flex;
+    height: 700px;
+    flex-wrap: wrap; 
+    /*wrap the items, and aloo them expand to diffrent lines */
+    flex-direction: row; 
+    /*defined the main axis, default is flex direction = row*/
+    justify-content: space-around; 
+    /* on main axis- define the aligmnet of element. default: flex-start */
+    align-items: center; 
+    /* on cross axis- default : streach to take all space on thr cros axis*/
+    align-content: flex-end; /**/
+}
+.flexbox-container-column {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexbox-item {
+    width: 200px;
+    margin: 10px;
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+}
+
+.flexbox-item-1 {
+    min-height: 100px;
+    flex-shrink: 0; /*first item will not shrink while change the resolution of the screen*/
+    align-self: flex-end; /* item 3 align to the end of main axis while the both other are streach*/
+    order: 3; /* change the order of the items without change the html*/
+    flex: 1 0 0px; /*shortcut for flex: grow, shrink, basis*/
+}
+.flexbox-item-2 {
+    min-height: 200px;
+    flex-grow: 2; /*item 2 and 3 will take the extra space, 
+    and split the space between according to flex-grow ratio. 
+    flexbox-item-2 almost! twice bigger than flexbox-item-3
+    but not exacly twice, couse flex-item has width of 200 px. so it add the extra spacw to the 200.
+    so incease of 300 extra space item 2 will be 200+200 and item 3 = 200+100.
+    so it not duplicate
+    */
+    flex-basis: 0; 
+    /*for overide the not exacly twice of flex-grow, now it relatet to the width of the items = 0
+    add it to both items*/
+    align-self: center; 
+    /*overide the align content of other item on the flex box, on main axis.
+    item 2 align to center while the both other are streach*/
+    order: 1;
+}
+
+.flexbox-item-3 {
+    min-height: 300px;
+    flex-grow: 1; /*item 3 will take all the extra space*/
+    flex-basis: 0;
+    order: 2;
+}
+
+
+/* .axis {
+    position: absolute;
+}
+
+.cross-axis {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100%;
+    background-color: blue;
+}
+
+.main-axis {
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5px;
+    width: 100%;
+    background-color: red;
+}
+
+.axis::after {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 2em;
+}
+
+.main-axis::after {
+    position: absolute;
+    content: 'Main Axis';
+    color: red;
+}
+
+.cross-axis::after {
+    white-space: nowrap;
+    content: 'Cross Axis';
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: blue;
+} */

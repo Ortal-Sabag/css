@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /*before and end pseudo css must have the content attribute even empty one ''*/
+            /* before and after psedue came before and after the content inside the elment*/
+            /* psedue classes must defined on elemnt with content cant be on input for example */
+            /* input is self closing tag. no open and close tags with content between */
+            /* each elment can have only one afetr and beffore, doent support 2 before or 2 after*/
+            
+            /*
+            .required::before{
+                content: ''; 
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color:red;
+            }
+            .required::after{
+                content: '';
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color:blue;
+            }
+            */
+            .required::after {
+                content: '*';
+                color:red;
+            }
+            label::after{
+                content: 'something else';
+            }
+            /* .required::before {
+                content: '*';
+                color:red;
+            }
+            label::after{
+                content: ' something else';
+            } */
+            [data-tooltip]{
+                position: relative;
+            }
+            [data-tooltip]:hover::after{
+                content: attr(data-tooltip); /*attr function will return the value of any data attribute which can then be used in the CSS*/
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin: 5px;
+                padding: 5px;
+                background-color: lightgrey;
+            }
+
+        </style>
+    </head>
+    <body>
+        <label class="required">Name</label>
+        <input type="text" required>
+        <button data-tooltip="Tooltip">Submit Form</button>
+    </body>
+</html>
